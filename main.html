@@ -314,22 +314,11 @@
     
 function downloadFile(url, filename) {
     const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', filename);
-    link.setAttribute('target', '_blank'); 
-    
-    link.style.display = 'none';
+    link.href = url;
+    link.download = filename;
     document.body.appendChild(link);
-    
     link.click();
-    
-    setTimeout(() => {
-        document.body.removeChild(link);
-    }, 100);
-    
-    setTimeout(() => {
-        window.open(url, '_blank');
-    }, 500);
+    document.body.removeChild(link);
 }
     
     function renderMacros(filtered = macros) {
