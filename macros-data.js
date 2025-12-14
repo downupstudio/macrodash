@@ -6,10 +6,10 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/cataclysm.png",
         downloads: {
-            gdr: "macros/cataclysm.gdr",
-            slc: "macros/cataclysm.slc",
-            ybot: "macros/cataclysm.ybot",
-            tcm: "macros/cataclysm.tcm"
+            gdr: "macros/Cataclysm.gdr",
+            slc: "macros/Cataclysm.slc",
+            ybot: "macros/Cataclysm.ybot",
+            tcm: "macros/Cataclysm.tcm"
         }
     },
     {
@@ -19,7 +19,7 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/bloodbath.png",
         downloads: {
-            gdr: "macros/bloodbath.gdr",
+            gdr: "macros/Bloodbath.gdr",
         }
     },
     {
@@ -29,10 +29,10 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/aftermath.png",
         downloads: {
-            gdr: "macros/aftermath.gdr",
-            slc: "macros/aftermath.slc",
-            ybot: "macros/aftermath.ybot",
-            tcm: "macros/aftermath.tcm"
+            gdr: "macros/Aftermath.gdr",
+            slc: "macros/Aftermath.slc",
+            ybot: "macros/Aftermath.ybot",
+            tcm: "macros/Aftermath.tcm"
         }
     },
     {
@@ -41,10 +41,10 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/ashley wave trials.png",
         downloads: {
-            gdr: "macros/ashley wave trials.gdr",
-            slc: "macros/ashley wave trials.slc",
-            ybot: "macros/ashley wave trials.ybot",
-            tcm: "macros/ashley wave trials.tcm"
+            gdr: "macros/Ashley Wave Trials.gdr",
+            slc: "macros/Ashley Wave Trials.slc",
+            ybot: "macros/Ashley Wave Trials.ybot",
+            tcm: "macros/Ashley Wave Trials.tcm"
         }
     },
         {
@@ -54,10 +54,10 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/thinking space.png",
         downloads: {
-            gdr: "macros/thinking space.gdr",
-            slc: "macros/thinking space.slc",
-            ybot: "macros/thinking space.ybot",
-            tcm: "macros/thinking space.tcm"
+            gdr: "macros/Thinking Space.gdr",
+            slc: "macros/Thinking Space.slc",
+            ybot: "macros/Thinking Space.ybot",
+            tcm: "macros/Thinking Space.tcm"
         }
     },
     {
@@ -67,7 +67,7 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/tsii.png",
         downloads: {
-            gdr: "macros/thinking space ii.gdr",
+            gdr: "macros/Thinking Space II.gdr",
         }
     },
     {
@@ -76,10 +76,10 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/kenos.png",
         downloads: {
-            gdr: "macros/kenos.gdr",
-            slc: "macros/kenos.slc",
-            ybot: "macros/kenos.ybot",
-            tcm: "macros/kenos.tcm"
+            gdr: "macros/Kenos.gdr",
+            slc: "macros/Kenos.slc",
+            ybot: "macros/Kenos.ybot",
+            tcm: "macros/Kenos.tcm"
         }
     },
         {
@@ -88,7 +88,7 @@ const macros = [
         difficulty: "Extreme Demon",
         thumbnail: "thumbnails/femboy circles.png",
         downloads: {
-            gdr: "macros/femboy circles.gdr",
+            gdr: "macros/Femboy Circles.gdr",
         }
     },
 ];
