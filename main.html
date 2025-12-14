@@ -251,107 +251,107 @@
         </div>
         
         <div class="macros-grid" id="macrosGrid">
-            <!-- Macros will be populated here -->
         </div>
         
         <div class="supporters-link">
-            <a href="supporters.html">View Macro Submitters</a>
+            <a href="supporters.html">View Supporters & Macro Submitters</a>
         </div>
         
         <footer>
             <p>&copy; 2025 AntarestarGD - Hosted on GitHub Pages</p>
         </footer>
     </div>
-<script src="macros-data.js"></script>   
-<script>
-    const seriesFilter = document.getElementById('seriesFilter');
-    const authorFilter = document.getElementById('authorFilter');
-    const difficultyFilter = document.getElementById('difficultyFilter');
-    const formatFilter = document.getElementById('formatFilter');
     
-    function populateDropdowns() {
-        const allSeries = macros
-            .map(macro => macro.series)
-            .filter(Boolean);
+    <script src="macros-data.js"></script>
+    <script>
+        const seriesFilter = document.getElementById('seriesFilter');
+        const authorFilter = document.getElementById('authorFilter');
+        const difficultyFilter = document.getElementById('difficultyFilter');
+        const formatFilter = document.getElementById('formatFilter');
         
-        const uniqueSeries = [...new Set(allSeries)].sort((a, b) => 
-            a.toLowerCase().localeCompare(b.toLowerCase())
-        );
+        function populateDropdowns() {
+            const allSeries = macros
+                .map(macro => macro.series)
+                .filter(Boolean); 
+            
+            const uniqueSeries = [...new Set(allSeries)].sort((a, b) => 
+                a.toLowerCase().localeCompare(b.toLowerCase())
+            );
+            
+            uniqueSeries.forEach(series => {
+                const option = document.createElement('option');
+                option.value = series;
+                option.textContent = series;
+                seriesFilter.appendChild(option);
+            });
+            
+            const allAuthors = macros.map(macro => macro.author);
+            const uniqueAuthors = [...new Set(allAuthors)].sort((a, b) => 
+                a.toLowerCase().localeCompare(b.toLowerCase())
+            );
+            
+            uniqueAuthors.forEach(author => {
+                const option = document.createElement('option');
+                option.value = author;
+                option.textContent = author;
+                authorFilter.appendChild(option);
+            });
+        }
         
-        uniqueSeries.forEach(series => {
-            const option = document.createElement('option');
-            option.value = series;
-            option.textContent = series;
-            seriesFilter.appendChild(option);
-        });
+        function filterMacros() {
+            const series = seriesFilter.value;
+            const author = authorFilter.value;
+            const difficulty = difficultyFilter.value;
+            const format = formatFilter.value;
         
-        const allAuthors = macros.map(macro => macro.author);
-        const uniqueAuthors = [...new Set(allAuthors)].sort((a, b) => 
-            a.toLowerCase().localeCompare(b.toLowerCase())
-        );
+            return macros.filter(macro => {
+                return (series === "" || (macro.series && macro.series === series)) &&
+                       (author === "" || macro.author === author) &&
+                       (difficulty === "" || macro.difficulty === difficulty) &&
+                       (format === "" || macro.downloads[format]);
+            });
+        }
         
-        uniqueAuthors.forEach(author => {
-            const option = document.createElement('option');
-            option.value = author;
-            option.textContent = author;
-            authorFilter.appendChild(option);
-        });
-    }
-    
-    function filterMacros() {
-        const series = seriesFilter.value;
-        const author = authorFilter.value;
-        const difficulty = difficultyFilter.value;
-        const format = formatFilter.value;
-    
-        return macros.filter(macro => {
-            return (series === "" || (macro.series && macro.series === series)) &&
-                   (author === "" || macro.author === author) &&
-                   (difficulty === "" || macro.difficulty === difficulty) &&
-                   (format === "" || macro.downloads[format]);
-        });
-    }
-    
-function downloadFile(url, filename) {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-    
-    function renderMacros(filtered = macros) {
-        const grid = document.getElementById('macrosGrid');
-        const sortedMacros = filtered.sort((a, b) => a.title.localeCompare(b.title));
-        grid.innerHTML = sortedMacros.map(macro => `
-            <div class="macro-card">
-                <div class="thumbnail">
-                    <img src="${macro.thumbnail}" alt="${macro.title} Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
-                </div>
-                <div class="macro-info">
-                    <div class="macro-title">${macro.title}</div>
-                    ${macro.series ? `<span class="series">${macro.series}</span>` : ''}
-                    <div class="author">👤 ${macro.author}</div>
-                    <div class="difficulty">⭐ ${macro.difficulty}</div>
-                    <div class="download-buttons">
-                        ${macro.downloads.gdr ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.gdr}', '${macro.title}.gdr')">↓ .gdr</button>` : ''}
-                        ${macro.downloads.slc ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.slc}', '${macro.title}.slc')">↓ .slc</button>` : ''}
-                        ${macro.downloads.ybot ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.ybot}', '${macro.title}.ybot')">↓ .ybot</button>` : ''}
-                        ${macro.downloads.tcm ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.tcm}', '${macro.title}.tcm')">↓ .tcm</button>` : ''}
+        function downloadFile(url, filename) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        function renderMacros(filtered = macros) {
+            const grid = document.getElementById('macrosGrid');
+            const sortedMacros = filtered.sort((a, b) => a.title.localeCompare(b.title));
+            grid.innerHTML = sortedMacros.map(macro => `
+                <div class="macro-card">
+                    <div class="thumbnail">
+                        <img src="${macro.thumbnail}" alt="${macro.title} Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+                    <div class="macro-info">
+                        <div class="macro-title">${macro.title}</div>
+                        ${macro.series ? `<span class="series">${macro.series}</span>` : ''}
+                        <div class="author">👤 ${macro.author}</div>
+                        <div class="difficulty">⭐ ${macro.difficulty}</div>
+                        <div class="download-buttons">
+                            ${macro.downloads.gdr ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.gdr}', '${macro.title}.gdr')">↓ .gdr</button>` : ''}
+                            ${macro.downloads.slc ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.slc}', '${macro.title}.slc')">↓ .slc</button>` : ''}
+                            ${macro.downloads.ybot ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.ybot}', '${macro.title}.ybot')">↓ .ybot</button>` : ''}
+                            ${macro.downloads.tcm ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.tcm}', '${macro.title}.tcm')">↓ .tcm</button>` : ''}
+                        </div>
                     </div>
                 </div>
-            </div>
-        `).join('');
-    }
-    
-    populateDropdowns();
-    renderMacros();
-    
-    seriesFilter.addEventListener('change', () => renderMacros(filterMacros()));
-    authorFilter.addEventListener('change', () => renderMacros(filterMacros()));
-    difficultyFilter.addEventListener('change', () => renderMacros(filterMacros()));
-    formatFilter.addEventListener('change', () => renderMacros(filterMacros()));
-</script>
+            `).join('');
+        }
+        
+        populateDropdowns();
+        renderMacros();
+        
+        seriesFilter.addEventListener('change', () => renderMacros(filterMacros()));
+        authorFilter.addEventListener('change', () => renderMacros(filterMacros()));
+        difficultyFilter.addEventListener('change', () => renderMacros(filterMacros()));
+        formatFilter.addEventListener('change', () => renderMacros(filterMacros()));
+    </script>
 </body>
 </html>
