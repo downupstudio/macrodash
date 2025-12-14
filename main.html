@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacroDash - GD Macros by AntarestarGD</title>
+    <link rel="icon" type="image/x-icon" href="macrodashicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+        
+        select, input {
+            padding: 10px 35px 10px 15px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            max-height: 200px;
+            overflow-y: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23667eea' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+            min-width: 200px;
+            flex: 1;
+        }
+        
+        select::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        select::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        select::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+        
+        select::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+        
+        select {
+            scrollbar-width: thin;
+            scrollbar-color: #667eea #f1f1f1;
+        }
+        
+        select option {
+            padding: 8px 12px;
+            font-size: 0.95em;
+        }
+        
+        select:hover, input:hover {
+            border-color: #764ba2;
+        }
+        
+        .macros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .macro-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .macro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .macro-info {
+            padding: 20px;
+        }
+        
+        .macro-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .series {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        
+        .author {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .difficulty {
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            padding: 8px 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .download-btn:hover {
+            background: #764ba2;
+        }
+        
+        .supporters-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .supporters-link a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .supporters-link a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="MacroDash Logo" style="max-width: 300px; margin-bottom: 20px;">
+            <h1>MacroDash</h1>
+            <p class="subtitle">Geometry Dash Macros by AntarestarGD</p>
+            <p class="subtitle">Submit a macro at submit.macrodash@gmail.com</p>
+        </header>
+        
+        <div class="filters">
+            <select id="seriesFilter">
+                <option value="">All Series</option>
+            </select>
+            <select id="authorFilter">
+                <option value="">All Authors</option>
+            </select>
+            <select id="difficultyFilter">
+                <option value="">All Difficulties</option>
+                <option value="Insane Demon">Insane Demon</option>
+                <option value="Extreme Demon">Extreme Demon</option>
+            </select>
+            <select id="formatFilter">
+                <option value="">All Formats</option>
+                <option value="gdr">.gdr</option>
+                <option value="slc">.slc</option>
+                <option value="ybot">.ybot</option>
+                <option value="tcm">.tcm</option>
+            </select>
+        </div>
+        
+        <div class="macros-grid" id="macrosGrid">
+            <!-- Macros will be populated here -->
+        </div>
+        
+        <div class="supporters-link">
+            <a href="supporters.html">View Macro Submitters</a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 AntarestarGD - Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+<script src="macros-data.js"></script>   
+<script>
+    const seriesFilter = document.getElementById('seriesFilter');
+    const authorFilter = document.getElementById('authorFilter');
+    const difficultyFilter = document.getElementById('difficultyFilter');
+    const formatFilter = document.getElementById('formatFilter');
+    
+    function populateDropdowns() {
+        const allSeries = macros
+            .map(macro => macro.series)
+            .filter(Boolean);
+        
+        const uniqueSeries = [...new Set(allSeries)].sort((a, b) => 
+            a.toLowerCase().localeCompare(b.toLowerCase())
+        );
+        
+        uniqueSeries.forEach(series => {
+            const option = document.createElement('option');
+            option.value = series;
+            option.textContent = series;
+            seriesFilter.appendChild(option);
+        });
+        
+        const allAuthors = macros.map(macro => macro.author);
+        const uniqueAuthors = [...new Set(allAuthors)].sort((a, b) => 
+            a.toLowerCase().localeCompare(b.toLowerCase())
+        );
+        
+        uniqueAuthors.forEach(author => {
+            const option = document.createElement('option');
+            option.value = author;
+            option.textContent = author;
+            authorFilter.appendChild(option);
+        });
+    }
+    
+    function filterMacros() {
+        const series = seriesFilter.value;
+        const author = authorFilter.value;
+        const difficulty = difficultyFilter.value;
+        const format = formatFilter.value;
+    
+        return macros.filter(macro => {
+            return (series === "" || (macro.series && macro.series === series)) &&
+                   (author === "" || macro.author === author) &&
+                   (difficulty === "" || macro.difficulty === difficulty) &&
+                   (format === "" || macro.downloads[format]);
+        });
+    }
+    
+    function downloadFile(url, filename) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    
+    function renderMacros(filtered = macros) {
+        const grid = document.getElementById('macrosGrid');
+        const sortedMacros = filtered.sort((a, b) => a.title.localeCompare(b.title));
+        grid.innerHTML = sortedMacros.map(macro => `
+            <div class="macro-card">
+                <div class="thumbnail">
+                    <img src="${macro.thumbnail}" alt="${macro.title} Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="macro-info">
+                    <div class="macro-title">${macro.title}</div>
+                    ${macro.series ? `<span class="series">${macro.series}</span>` : ''}
+                    <div class="author">👤 ${macro.author}</div>
+                    <div class="difficulty">⭐ ${macro.difficulty}</div>
+                    <div class="download-buttons">
+                        ${macro.downloads.gdr ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.gdr}', '${macro.title}.gdr')">↓ .gdr</button>` : ''}
+                        ${macro.downloads.slc ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.slc}', '${macro.title}.slc')">↓ .slc</button>` : ''}
+                        ${macro.downloads.ybot ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.ybot}', '${macro.title}.ybot')">↓ .ybot</button>` : ''}
+                        ${macro.downloads.tcm ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.tcm}', '${macro.title}.tcm')">↓ .tcm</button>` : ''}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    populateDropdowns();
+    renderMacros();
+    
+    seriesFilter.addEventListener('change', () => renderMacros(filterMacros()));
+    authorFilter.addEventListener('change', () => renderMacros(filterMacros()));
+    difficultyFilter.addEventListener('change', () => renderMacros(filterMacros()));
+    formatFilter.addEventListener('change', () => renderMacros(filterMacros()));
+</script>
+</body>
+</html>

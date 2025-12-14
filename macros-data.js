@@ -1,0 +1,94 @@
+const macros = [
+    {
+        title: "Cataclysm",
+        series: "The Apocalyptic Trilogy",
+        author: "Ggb0y",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/cataclysm.png",
+        downloads: {
+            gdr: "macros/cataclysm.gdr",
+            slc: "macros/cataclysm.slc",
+            ybot: "macros/cataclysm.ybot",
+            tcm: "macros/cataclysm.tcm"
+        }
+    },
+    {
+        title: "Bloodbath",
+        series: "The Apocalyptic Trilogy",
+        author: "Riot",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/bloodbath.png",
+        downloads: {
+            gdr: "macros/bloodbath.gdr",
+        }
+    },
+    {
+        title: "Aftermath",
+        series: "The Apocalyptic Trilogy",
+        author: "Exenity",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/aftermath.png",
+        downloads: {
+            gdr: "macros/aftermath.gdr",
+            slc: "macros/aftermath.slc",
+            ybot: "macros/aftermath.ybot",
+            tcm: "macros/aftermath.tcm"
+        }
+    },
+    {
+        title: "Ashley Wave Trials",
+        author: "OddMod",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/ashley wave trials.png",
+        downloads: {
+            gdr: "macros/ashley wave trials.gdr",
+            slc: "macros/ashley wave trials.slc",
+            ybot: "macros/ashley wave trials.ybot",
+            tcm: "macros/ashley wave trials.tcm"
+        }
+    },
+        {
+        title: "Thinking Space",
+        series: "Thinking Space Series",
+        author: "HidekiX",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/thinking space.png",
+        downloads: {
+            gdr: "macros/thinking space.gdr",
+            slc: "macros/thinking space.slc",
+            ybot: "macros/thinking space.ybot",
+            tcm: "macros/thinking space.tcm"
+        }
+    },
+    {
+        title: "Thinking Space II",
+        series: "Thinking Space Series",
+        author: "CairoX",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/tsii.png",
+        downloads: {
+            gdr: "macros/thinking space ii.gdr",
+        }
+    },
+    {
+        title: "Kenos",
+        author: "Bianox",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/kenos.png",
+        downloads: {
+            gdr: "macros/kenos.gdr",
+            slc: "macros/kenos.slc",
+            ybot: "macros/kenos.ybot",
+            tcm: "macros/kenos.tcm"
+        }
+    },
+        {
+        title: "Femboy Circles",
+        author: "Skeletonette",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/femboy circles.png",
+        downloads: {
+            gdr: "macros/femboy circles.gdr",
+        }
+    },
+];

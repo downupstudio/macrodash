@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supporters - MacroDash</title>
+    <link rel="icon" type="image/x-icon" href="macrodashicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .back-button a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .back-button a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .supporters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .supporter-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .supporter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .supporter-info {
+            padding: 20px;
+        }
+        
+        .supporter-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .supporter-details {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .submitted-macro {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .status {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        .thank-you {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="MacroDash Logo" style="max-width: 300px; margin-bottom: 20px;">
+            <h1>Supporters & Contributors</h1>
+            <p class="subtitle">Thank you to everyone who has contributed to MacroDash!</p>
+        </header>
+        
+        <div class="back-button">
+            <a href="main.html">← Back to Macros</a>
+        </div>
+        
+        <div class="supporters-grid" id="supportersGrid">
+            <div class="supporter-card">
+                <div class="supporter-info">
+                    <div class="supporter-name">XorinorGD</div>
+                    <div class="supporter-details">
+                        <strong>Submitted Macro:</strong> Kenos by Bianox
+                    </div>
+                    <div class="supporter-details">
+                        <strong>Submission Date:</strong> December 2025
+                    </div>
+                    <div class="supporter-details">
+                        <strong>Status:</strong> 
+                        <span class="status">✓ Verified</span>
+                    </div>
+                    <div class="submitted-macro">Kenos</div>
+                </div>
+            </div>
+            
+            <div class="supporter-card">
+                <div class="supporter-info">
+                    <div class="supporter-name">You Could Be Next!</div>
+                    <div class="supporter-details">
+                        Submit your macros to be featured on this page.
+                    </div>
+                    <div class="supporter-details">
+                        Email your submissions to: submit.macrodash@gmail.com
+                    </div>
+                    <div class="supporter-details">
+                        Include your name and the macro details.
+                    </div>
+                    <div class="status" style="background: #667eea;">Join Us</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="thank-you">
+            <p>Your contributions help make MacroDash a comprehensive resource for Geometry Dash players!</p>
+            <p>Every submission is reviewed and tested before being added to the main collection.</p>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 AntarestarGD - Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+</body>
+</html>
