@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits - MacroDash</title>
+    <link rel="icon" type="image/x-icon" href="macrodashicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .back-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .back-button a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .back-button a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .credits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .credit-category {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .category-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-align: center;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .tba-section {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .tba {
+            font-size: 1.5em;
+            color: #764ba2;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        footer a:hover {
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="MacroDash Logo" style="max-width: 300px; margin-bottom: 20px;">
+            <h1>Credits & Acknowledgments</h1>
+            <p class="subtitle">Thank you to everyone who made MacroDash possible!</p>
+        </header>
+        
+        <div class="back-button">
+            <a href="main.html">← Back to Macros</a>
+        </div>
+        
+        <div class="credits-grid">
+            <div class="credit-category">
+                <h2 class="category-title">💻 Programming & Development</h2>
+                <p>AntarestarGD is the primary developer and maintainer of MacroDash.<br>
+                All programming and development work is handled by AntarestarGD.</p>
+            </div>
+            
+            <div class="credit-category">
+                <h2 class="category-title">🎮 Macros</h2>
+                <p>All levels made by their listed creators.<br>
+                    The macro of "Kenos" submitted by XorinorGD.<br>
+                   The macro of "Femboy Circles" submitted by AntarestarGD.<br>
+                   The rest of the macros made by <a href="t.me/gdmacros">GD Macros (ГД Макрос)</a> on Telegram.</p>
+            </div>
+            
+            <div class="credit-category">
+                <h2 class="category-title">🖼️ Thumbnails & Assets</h2>
+                <p>Thumbnails made by Maxi69, woidzero, Hsz1el, ItsAngTheOz, mystic, TruFFel, Viewsonic, Kusa, Cubiminx.<br>
+                Logo designed by AntarestarGD.<br>
+                All other assets sourced from public domain or created by AntarestarGD.
+                </p>
+            </div>
+            
+            <div class="credit-category">
+                <h2 class="category-title">🛠️ Tools & Technologies</h2>
+                <p>Programmed using Visual Studio Code.<br>
+                Hosted on GitHub Pages.<br>
+                Written in HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 AntarestarGD - Hosted on GitHub Pages</p>
+            <p><a href="supporters.html">View Supporters</a> • <a href="main.html">Back to Macros</a></p>
+        </footer>
+    </div>
+</body>
+</html>

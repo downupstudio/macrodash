@@ -91,4 +91,16 @@ const macros = [
             gdr: "macros/femboy_circles.gdr",
         }
     },
+            {
+        title: "Conical Depression",
+        author: "KrmaL",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/conical depression.png",
+        downloads: {
+            gdr: "macros/conical_depression.gdr",
+            slc: "macros/conical_depression.slc",
+            ybot: "macros/conical_depression.ybot",
+            tcm: "macros/conical_depression.tcm"
+        }
+    },
 ];
