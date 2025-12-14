@@ -314,23 +314,22 @@
     
 function downloadFile(url, filename) {
     const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
+    link.setAttribute('href', url);
+    link.setAttribute('download', filename);
+    link.setAttribute('target', '_blank'); 
     
+    link.style.display = 'none';
     document.body.appendChild(link);
     
-    if (link.click) {
-        link.click();
-    } else {
-        const event = new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true
-        });
-        link.dispatchEvent(event);
-    }
+    link.click();
     
-    document.body.removeChild(link);
+    setTimeout(() => {
+        document.body.removeChild(link);
+    }, 100);
+    
+    setTimeout(() => {
+        window.open(url, '_blank');
+    }, 500);
 }
     
     function renderMacros(filtered = macros) {
