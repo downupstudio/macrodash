@@ -1,7 +1,0 @@
-permalink: /:title/
-
-defaults:
-  - scope:
-      path: "main.html"
-    values:
-      permalink: /
