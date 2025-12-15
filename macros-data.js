@@ -103,4 +103,17 @@ const macros = [
             tcm: "macros/conical_depression.tcm"
         }
     },
+        {
+        title: "LIMBO",
+        author: "Mindcap",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/limbo.png",
+        downloads: {
+            gdr: "macros/limbo.gdr",
+            slc: "macros/limbo.slc",
+            ybot: "macros/limbo.ybot",
+            tcm: "macros/limbo.tcm"
+        },
+        notes: "This macro requires the latest version of Megahack v9, more specifically, the random seed feature has to be enabled. At the end of the level, the green key will always be chosen."
+    },
 ];

@@ -218,6 +218,16 @@
             padding-top: 20px;
             border-top: 2px solid rgba(255,255,255,0.3);
         }
+
+        .notes {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
     </style>
 </head>
 <body>
@@ -335,6 +345,7 @@
                         ${macro.series ? `<span class="series">${macro.series}</span>` : ''}
                         <div class="author">👤 ${macro.author}</div>
                         <div class="difficulty">⭐ ${macro.difficulty}</div>
+                        ${macro.notes ? `<div class="notes">📝 ${macro.notes}</div>` : ''}
                         <div class="download-buttons">
                             ${macro.downloads.gdr ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.gdr}', '${macro.title}.gdr')">↓ .gdr</button>` : ''}
                             ${macro.downloads.slc ? `<button class="download-btn" onclick="downloadFile('${macro.downloads.slc}', '${macro.title}.slc')">↓ .slc</button>` : ''}
