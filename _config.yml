@@ -1,2 +1,7 @@
-permalink: pretty
-include: [".html"]
+permalink: /:title/
+
+defaults:
+  - scope:
+      path: "main.html"
+    values:
+      permalink: /
