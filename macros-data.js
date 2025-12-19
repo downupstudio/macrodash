@@ -114,6 +114,6 @@ const macros = [
             ybot: "macros/limbo.ybot",
             tcm: "macros/limbo.tcm"
         },
-        notes: "This macro requires the latest version of Megahack v9, more specifically, the random seed feature has to be enabled. At the end of the level, the green key will always be chosen."
+        notes: "At the end of the level, the green key will always be chosen."
     },
 ];
