@@ -127,6 +127,6 @@ const macros = [
             ybot: "macros/slaughterhouse.ybot",
             tcm: "macros/slaughterhouse.tcm"
         },
-        notes: "240 physics TPS required. You can bypass it by using Megahack V9's TPD bypass"
+        notes: "240 physics TPS required. You can bypass it by using Megahack V9's TPS bypass"
     },
 ];
