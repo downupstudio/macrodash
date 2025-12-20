@@ -116,4 +116,17 @@ const macros = [
         },
         notes: "At the end of the level, the green key will always be chosen."
     },
+            {
+        title: "Slaughterhouse",
+        author: "Icedcave",
+        difficulty: "Extreme Demon",
+        thumbnail: "thumbnails/Slaughterhouse.png",
+        downloads: {
+            gdr: "macros/slaughterhouse.gdr",
+            slc: "macros/slaughterhouse.slc",
+            ybot: "macros/slaughterhouse.ybot",
+            tcm: "macros/slaughterhouse.tcm"
+        },
+        notes: "240 physics TPS required. You can bypass it by using Megahack V9's TPD bypass"
+    },
 ];
